@@ -20,6 +20,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const [copied, setCopied] = useState("");
@@ -31,6 +32,8 @@ const LandingPage = () => {
     setCopied(type);
     setTimeout(() => setCopied(""), 2000);
   };
+
+  const navigate = useNavigate();
 
   const CodeBlock = ({ children, copyText, title }) => (
     <div className="bg-gray-900 rounded-lg p-4 relative group">
@@ -137,7 +140,10 @@ const LandingPage = () => {
       <nav className="relative z-50 px-6 py-4 bg-black/20 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <div
+              onClick={() => navigate("/")}
+              className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center"
+            >
               <Zap className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -641,6 +647,15 @@ PORT=7000`}
                 @codebyviral
               </a>
             </p>
+
+            <div>
+              <button
+                onClick={() => navigate("/report-an-issue")}
+                className="bg-blue-900/30 text-gray-400 p-1 rounded-3xl px-3 text-sm mb-7 cursor-pointer"
+              >
+                Report a issue
+              </button>
+            </div>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span className="bg-blue-900/30 px-3 py-1 rounded-full">
