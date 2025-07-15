@@ -234,7 +234,7 @@ const LandingPage = () => {
             <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm border border-white/10">
               <Rocket className="w-4 h-4 mr-2 text-blue-400" />
               <span className="text-sm text-blue-300">
-                Version 2.0.1 • TypeScript Support Added
+                Version 2.5.3 • TypeScript Support Added
               </span>
             </div>
 
